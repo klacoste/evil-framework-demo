@@ -12,3 +12,4 @@ dist/
 
 # Env
 .env
+specs/00-initial-email.md
