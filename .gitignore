@@ -2,7 +2,7 @@
 node_modules/
 
 # Vite
-/dist/
+dist/
 
 # Logs
 *.log

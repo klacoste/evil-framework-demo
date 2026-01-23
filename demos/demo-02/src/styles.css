@@ -1,0 +1,88 @@
+:root {
+  color-scheme: light;
+  font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
+  line-height: 1.5;
+  color: #111111;
+  background: #f4f4f1;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.container {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 32px;
+  background: radial-gradient(circle at top, #f8f7f4 0%, #eae6df 70%);
+}
+
+.card {
+  width: min(520px, 92vw);
+  background: #ffffff;
+  border: 1px solid #e4dfd6;
+  border-radius: 18px;
+  padding: 28px;
+  box-shadow: 0 20px 45px rgba(18, 18, 18, 0.12);
+}
+
+h1 {
+  margin: 0 0 12px;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.status {
+  margin: 12px 0 20px;
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #6b655d;
+}
+
+.status.error {
+  color: #b04632;
+}
+
+.profile {
+  display: grid;
+  gap: 12px;
+  margin: 16px 0 24px;
+}
+
+.profile div {
+  display: grid;
+  gap: 4px;
+}
+
+.label {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #7b746b;
+}
+
+button {
+  border: 1px solid #c8c0b4;
+  background: #f5f1ea;
+  padding: 10px 18px;
+  border-radius: 10px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+button:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
