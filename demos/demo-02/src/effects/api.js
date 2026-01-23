@@ -1,8 +1,6 @@
 export const api = {
-  _callCount: 0,
   fetchUser() {
-    this._callCount += 1;
-    const shouldFail = this._callCount % 2 === 0;
+    const shouldFail = Math.random() < 1 / 3;
 
     return new Promise((resolve, reject) => {
       setTimeout(() => {

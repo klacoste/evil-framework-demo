@@ -1,12 +1,14 @@
 # Demo 02 — Async User Loader
 
-This demo extends the framework with async workflows using explicit services and effect handlers.
+This demo extends the framework with async workflows using explicit services, effect handlers, and split domains.
 
 - UI components subscribe via selectors only.
 - Services coordinate async behavior and issue commands.
 - Effects encapsulate external interactions.
- 
-The mock API alternates between success and error on each request.
+
+Entity state (user) and process state (load status/error) live in separate domains.
+
+The mock API randomly fails roughly 1 out of 3 requests.
 
 ## What to look for
 

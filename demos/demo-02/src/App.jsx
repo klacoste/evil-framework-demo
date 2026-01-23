@@ -1,14 +1,17 @@
 import { UserDomain } from "./domains/userDomain";
+import { UserLoadDomain } from "./domains/userLoadDomain";
 import { UserService } from "./services/userService";
 import { useSelector } from "./framework/useSelector";
 import "./styles.css";
 
 function UserProfileView() {
-  const status = useSelector(UserDomain.selectors.getStatus);
+  const status = useSelector(UserLoadDomain.selectors.getStatus);
+  const isLoading = useSelector(UserLoadDomain.selectors.isLoading);
   const user = useSelector(UserDomain.selectors.getUser);
-  const error = useSelector(UserDomain.selectors.getError);
+  const hasUser = useSelector(UserDomain.selectors.hasUser);
+  const error = useSelector(UserLoadDomain.selectors.getError);
 
-  if (status === "loading") {
+  if (isLoading) {
     return (
       <section className="card">
         <h1>User Profile</h1>
@@ -27,7 +30,7 @@ function UserProfileView() {
     );
   }
 
-  if (status === "success" && user) {
+  if (status === "idle" && hasUser && user) {
     return (
       <section className="card">
         <h1>User Profile</h1>
