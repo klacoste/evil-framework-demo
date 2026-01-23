@@ -1,0 +1,97 @@
+:root {
+  color-scheme: light;
+  font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
+  line-height: 1.5;
+  color: #121212;
+  background: #f6f3ee;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.container {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 32px;
+  background: linear-gradient(150deg, #f9f6f1, #e7e0d6);
+}
+
+.card {
+  width: min(640px, 94vw);
+  background: #ffffff;
+  border: 1px solid #e2ddd5;
+  border-radius: 20px;
+  padding: 28px;
+  box-shadow: 0 22px 48px rgba(16, 16, 16, 0.12);
+  display: grid;
+  gap: 18px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+h1 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.subtitle {
+  margin: 6px 0 0;
+  color: #615a52;
+  font-size: 14px;
+}
+
+.field {
+  display: grid;
+  gap: 8px;
+  font-size: 14px;
+  color: #4f493f;
+}
+
+input {
+  border: 1px solid #d6cdc0;
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-size: 16px;
+}
+
+input:focus {
+  outline: 2px solid #c2b6a4;
+  outline-offset: 2px;
+}
+
+.status {
+  margin: 0;
+  font-size: 14px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #6b655d;
+}
+
+.badge {
+  background: #f1dfc3;
+  color: #6a4b16;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.results {
+  margin: 0;
+  padding-left: 18px;
+  display: grid;
+  gap: 6px;
+}
