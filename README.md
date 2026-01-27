@@ -83,4 +83,33 @@ This is the **keystone demo**: the framework either holds here or it doesn’t.
 * Session transitions (logout + re-init via login)
 
 **Purpose:** Model real application lifespan.
+
 **What it invalidates:** Assumptions that state is short-lived or monotonic.
+
+---
+
+### **Demo 6 — Counter Without React (Naive DOM Render Pipeline)**
+
+**Invariant:** *Rendering is an adapter; the architecture should not depend on a specific UI library.*
+
+* Vanilla DOM rendering (no React)
+* Explicit selector subscriptions drive re-renders
+* Full subtree replacement per mount (intentionally non-optimized)
+
+**Purpose:** Prove the framework’s state/update model can drive UI without React.
+
+**What it invalidates:** Treating React (or a VDOM) as a required part of the architecture.
+
+---
+
+### **Demo 7 — Offline Operation & Conflict Resolution (Outbox + Versioning)**
+
+**Invariant:** *Offline, sync, and conflicts must be explicit state and named workflows — not background magic.*
+
+* Optimistic local edits + durable outbox of pending operations
+* Deterministic sync with version-based conflict detection
+* Conflicts represented explicitly and resolved via a visible workflow
+
+**Purpose:** Demonstrate a minimal offline/sync/conflict pipeline that stays within the framework boundaries.
+
+**What it invalidates:** Silent overwrites, UI-inferred freshness, and “eventual consistency by coincidence.”
