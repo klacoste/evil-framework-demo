@@ -113,3 +113,17 @@ This is the **keystone demo**: the framework either holds here or it doesn’t.
 **Purpose:** Demonstrate a minimal offline/sync/conflict pipeline that stays within the framework boundaries.
 
 **What it invalidates:** Silent overwrites, UI-inferred freshness, and “eventual consistency by coincidence.”
+
+---
+
+### **Demo 8 — Sync Engine Infrastructure (IndexedDB + WebWorker + WebSocket)**
+
+**Invariant:** *“Real” infrastructure must remain an adapter: boundaries stay strict, workflows stay observable, and concurrency stays named.*
+
+* Durable local persistence via IndexedDB (todo + outbox survive reload)
+* Sync + transport isolated in a WebWorker behind a message protocol
+* Real WebSocket server with push updates and deterministic conflict rules
+
+**Purpose:** Prove the framework’s explicit domain/service model still holds when side effects become asynchronous, state becomes durable, and transport becomes stateful.
+
+**What it invalidates:** UI-layer socket/DB logic, implicit background sync, and debugging by “hoping the timing works out”.

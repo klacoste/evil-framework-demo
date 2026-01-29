@@ -1,0 +1,280 @@
+:root {
+  color-scheme: light;
+  font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
+  line-height: 1.5;
+  color: #121212;
+  background: #f2f2f0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.container {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 32px;
+  background: linear-gradient(135deg, #f2f2f0 0%, #ece7e1 100%);
+}
+
+.card {
+  width: min(640px, 92vw);
+  background: #ffffff;
+  border: 1px solid #e5e0d8;
+  border-radius: 16px;
+  padding: 28px;
+  box-shadow: 0 18px 40px rgba(18, 18, 18, 0.12);
+  display: grid;
+  gap: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: center;
+}
+
+.eyebrow {
+  margin: 0 0 6px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #8b8277;
+}
+
+h1 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+h2 {
+  margin: 0 0 10px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.block {
+  border-top: 1px solid #eee8df;
+  padding-top: 16px;
+  display: grid;
+  gap: 10px;
+}
+
+.field {
+  display: grid;
+  gap: 6px;
+}
+
+label {
+  font-size: 13px;
+  color: #6b655d;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+input {
+  border: 1px solid #c9c1b5;
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-size: 16px;
+  background: #fdfbf8;
+}
+
+.meta-row,
+.status-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: center;
+  font-size: 14px;
+}
+
+.meta-label {
+  color: #6b655d;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 12px;
+}
+
+.meta-value {
+  font-weight: 600;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+button {
+  border: 1px solid #c9c1b5;
+  background: #f4f1eb;
+  padding: 10px 16px;
+  border-radius: 10px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+button:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.button-secondary {
+  background: #f7f3ed;
+}
+
+.connectivity {
+  display: grid;
+  gap: 8px;
+  justify-items: end;
+}
+
+.status {
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  border: 1px solid transparent;
+}
+
+.status.online {
+  background: #e6f4ea;
+  color: #23633e;
+  border-color: #cbe9d5;
+}
+
+.status.offline {
+  background: #fbeaea;
+  color: #8a2b2b;
+  border-color: #f2c7c7;
+}
+
+.status-idle {
+  color: #6b655d;
+}
+
+.status-syncing {
+  color: #2d5b88;
+}
+
+.status-connecting {
+  color: #2d5b88;
+}
+
+.status-offline {
+  color: #8a2b2b;
+}
+
+.status-booting {
+  color: #8b8277;
+}
+
+.status-conflict {
+  color: #a35b12;
+}
+
+.status-error {
+  color: #b42318;
+}
+
+.error-text {
+  margin: 6px 0 0;
+  font-size: 13px;
+  color: #b42318;
+}
+
+.conflict-block {
+  border-top: 1px solid #eee8df;
+  padding-top: 16px;
+}
+
+.conflict-panel {
+  background: #fff6e8;
+  border: 1px solid #f2d5a6;
+  padding: 16px;
+  border-radius: 12px;
+  display: grid;
+  gap: 10px;
+}
+
+.conflict-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 14px;
+}
+
+.conflict-row span {
+  color: #6b655d;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 12px;
+}
+
+.connectivity-panel {
+  display: grid;
+  gap: 12px;
+}
+
+.connectivity-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: center;
+}
+
+.connection-connected {
+  color: #23633e;
+}
+
+.connection-disconnected {
+  color: #8a2b2b;
+}
+
+.outbox {
+  display: grid;
+  gap: 12px;
+}
+
+.outbox-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.outbox-item {
+  border: 1px solid #eee8df;
+  border-radius: 12px;
+  padding: 10px 12px;
+  background: #fdfbf8;
+  display: grid;
+  gap: 6px;
+}
+
+.server-meta {
+  display: grid;
+  gap: 8px;
+}
+
+.muted-text {
+  margin: 0;
+  font-size: 13px;
+  color: #8b8277;
+}
