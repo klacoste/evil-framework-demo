@@ -141,3 +141,17 @@ This is the **keystone demo**: the framework either holds here or it doesn’t.
 **Purpose:** Demonstrate an honest CRDT collaboration flow while keeping the framework’s state ownership and side-effect isolation intact.
 
 **What it invalidates:** CRDT logic leaking into UI code, invisible merge behavior, and “it converged, trust me” debugging.
+
+---
+
+### **Demo 10 — Safer Renderer (Template Parts + Explicit Subscriptions)**
+
+**Invariant:** *A renderer can be incremental without being implicit: stable nodes + explicit parts, not subtree replacement or hidden dependency tracking.*
+
+* Template-parts renderer updates only dynamic holes (text/attr/prop/bool/event)
+* Input-safe updates (focus + cursor/selection preserved under frequent state changes)
+* Event listeners are stable and cleaned up via an explicit mount scope (no leaks/duplication)
+
+**Purpose:** Replace Demo 6’s “naive full replacement” with a renderer that remains an adapter, but is usable for real interactive UI.
+
+**What it invalidates:** Full DOM replacement as an update model, leaky event attachment patterns, and verbose imperative DOM-as-view code.
