@@ -1,0 +1,19 @@
+{
+  "name": "demo-09-crdt-collab",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "server": "node server/index.js",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "ws": "^8.17.1",
+    "yjs": "^13.6.16"
+  },
+  "devDependencies": {
+    "vite": "^5.4.0"
+  }
+}

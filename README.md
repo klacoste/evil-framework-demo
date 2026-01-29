@@ -127,3 +127,17 @@ This is the **keystone demo**: the framework either holds here or it doesn’t.
 **Purpose:** Prove the framework’s explicit domain/service model still holds when side effects become asynchronous, state becomes durable, and transport becomes stateful.
 
 **What it invalidates:** UI-layer socket/DB logic, implicit background sync, and debugging by “hoping the timing works out”.
+
+---
+
+### **Demo 9 — Collaborative Text (CRDT) With Explicit Boundaries**
+
+**Invariant:** *Convergence must not be “magic”: CRDT replication lives behind a boundary, and its effects are observable in state and events.*
+
+* Yjs-backed shared text with real multi-tab convergence
+* Worker-owned CRDT + IndexedDB durability + WebSocket replication
+* Explicit status + counters + bounded event log for debuggability
+
+**Purpose:** Demonstrate an honest CRDT collaboration flow while keeping the framework’s state ownership and side-effect isolation intact.
+
+**What it invalidates:** CRDT logic leaking into UI code, invisible merge behavior, and “it converged, trust me” debugging.
